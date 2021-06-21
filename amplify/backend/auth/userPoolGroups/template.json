@@ -1,0 +1,55 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "authadminWebAuthUserPoolId": {
+            "Type": "String",
+            "Default": "authadminWebAuthUserPoolId"
+        },
+        
+        "authadminWebAuthAppClientID": {
+            "Type": "String",
+            "Default": "authadminWebAuthAppClientID"
+        },
+        "authadminWebAuthAppClientIDWeb": {
+            "Type": "String",
+            "Default": "authadminWebAuthAppClientIDWeb"
+        },
+        "AuthRoleArn": {
+            "Type": "String"
+        },
+        "UnauthRoleArn": {
+            "Type": "String"
+        },
+        "env": {
+            "Type": "String"
+        }
+    },
+    "Conditions": {
+        "ShouldNotCreateEnvResources": {
+            "Fn::Equals": [
+                {
+                    "Ref": "env"
+                },
+                "NONE"
+            ]
+        }
+    },
+    "Resources": {
+    
+        "adminWebGroupGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "adminWebGroup",
+              "Precedence" : 1,
+              
+              "UserPoolId" : {
+                "Ref": "authadminWebAuthUserPoolId"
+              } 
+            }
+        },
+        
+    
+    
+    },
+    
+}

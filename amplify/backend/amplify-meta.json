@@ -1,0 +1,57 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-adminweb-dev-11437-authRole",
+      "UnauthRoleArn": "arn:aws:iam::545275976950:role/amplify-adminweb-dev-11437-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::545275976950:role/amplify-adminweb-dev-11437-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-adminweb-dev-11437-deployment",
+      "UnauthRoleName": "amplify-adminweb-dev-11437-unauthRole",
+      "StackName": "amplify-adminweb-dev-11437",
+      "StackId": "arn:aws:cloudformation:us-east-2:545275976950:stack/amplify-adminweb-dev-11437/c9bc9530-758d-11eb-88be-06eabac67bae",
+      "AmplifyAppId": "d3zazjgn8nox1"
+    }
+  },
+  "auth": {
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "adminWebAuth",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID"
+          ]
+        }
+      ],
+      "lastPushTimeStamp": "2021-02-23T04:27:19.265Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-adminweb-dev-11437-deployment/amplify-cfn-templates/auth/template.json",
+        "logicalId": "authuserPoolGroups"
+      },
+      "output": {},
+      "lastPushDirHash": "VcwS+5MhtCLxXznJf3HlkwuN1Xw="
+    },
+    "adminWebAuth": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-adminweb-dev-11437-deployment/amplify-cfn-templates/auth/adminWebAuth-cloudformation-template.yml",
+        "logicalId": "authadminWebAuth"
+      },
+      "lastPushTimeStamp": "2021-02-23T04:27:19.265Z",
+      "output": {
+        "UserPoolId": "us-east-2_eQhcKl0Dm",
+        "AppClientIDWeb": "57n43n8ghs8bn1ptdmfa4miui",
+        "AppClientID": "6d6l83kn4ofnm35uadb6f3f788",
+        "UserPoolName": "adminWebAuth_userpool"
+      },
+      "lastPushDirHash": "6q7ZQ5+Od18MNLDM/NUknAICMRk="
+    }
+  }
+}

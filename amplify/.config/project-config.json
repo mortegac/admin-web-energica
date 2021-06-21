@@ -1,0 +1,17 @@
+{
+  "projectName": "adminWeb",
+  "version": "3.0",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "src",
+      "DistributionDir": "build",
+      "BuildCommand": "node ./node_modules/@craco/craco/scripts/build.js",
+      "StartCommand": "node ./node_modules/@craco/craco/scripts/start.js"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}
